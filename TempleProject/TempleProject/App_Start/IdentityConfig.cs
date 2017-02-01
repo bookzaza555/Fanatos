@@ -6,9 +6,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using TempleProject.Models;
+using Personnel.Models;
 
-namespace TempleProject
+namespace Personnel
 {
     public class EmailService : IIdentityMessageService
     {

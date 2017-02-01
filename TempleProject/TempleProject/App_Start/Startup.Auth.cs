@@ -7,9 +7,9 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.DataProtection;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using TempleProject.Models;
+using Personnel.Models;
 
-namespace TempleProject
+namespace Personnel
 {
     public partial class Startup {
 
