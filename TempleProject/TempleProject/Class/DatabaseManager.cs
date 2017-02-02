@@ -17,7 +17,7 @@ namespace TempleProject.Class
         public static readonly string USER = "test";
         public static readonly string PASSWORD = "1234";
         public static readonly string DATABASE = "test";
-        public static readonly string CONNECTION_STRING = @"host= " + HOST + ";user=" + USER + ";password=" + PASSWORD + ";database=" + DATABASE + ";";
+        public static readonly string CONNECTION_STRING = @"host= " + HOST + ";user=" + USER + ";password=" + PASSWORD + ";database=" + DATABASE + ";CharSet=utf8;";
 
         public static void ExecuteNonQuery(string sql)
         {

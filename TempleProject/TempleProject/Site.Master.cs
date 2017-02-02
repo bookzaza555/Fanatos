@@ -7,21 +7,20 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
-using MySql.Data.MySqlClient;
-using TempleProject.Class;
 
 namespace TempleProject
 {
-	public partial class Site1 : System.Web.UI.MasterPage
-	{
+    public partial class Site : System.Web.UI.MasterPage
+    {
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+           
         }
 
         protected void lbuUser_Click(object sender, EventArgs e)
         {
-            
+          
         }
     }
 }

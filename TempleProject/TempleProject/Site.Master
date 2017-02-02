@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="TempleProject.Site1" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="TempleProject.Site" %>
 
 <!DOCTYPE html>
 
@@ -7,7 +7,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="icon" href="Image/favicon.ico" />
-    <title>ระบบวัด</title>
+    <title>ระบบบุคลากร - มหาวิทยาลัยเทคโนโลยีราชมงคลตะวันออก</title>
     <link href="CSS/Master.css" rel="stylesheet" />
     <script src="Script/JSFunction.js"></script>
 
@@ -135,8 +135,6 @@
     <form id="form1" runat="server">
         <div class="ps-ms-wrapper">
             <div class="ps-ms-main">
-
-                <!-- Navigation -->
                 <nav class="navbar navbar-default" role="navigation">
                     <div class="container">
                         <!-- Brand and toggle get grouped for better mobile display -->
@@ -165,11 +163,14 @@
                                 <li>
                                     <a href="contact.aspx">ติดต่อ</a>
                                 </li>
-                                 <li>
+                                <li>
                                     <a href="register.aspx">สมัครสมาชิก</a>
                                 </li>
                                 <li>
-                                    <a href="1234.aspx">เพิ่มเอา</a>
+                                    <a href="menu.aspx">รายการนิมนต์</a>
+                                </li>
+                                <li>
+                                    <a href="RegisterMonk.aspx">เพิ่มพระในวัด</a>
                                 </li>
                             </ul>
                         </div>
@@ -177,27 +178,19 @@
                     </div>
                     <!-- /.container -->
                 </nav>
-
-                <!-- jQuery -->
-                <script src="js/jquery.js"></script>
-
-                <!-- Bootstrap Core JavaScript -->
-                <script src="js/bootstrap.min.js"></script>
-
-                <!-- Script to Activate the Carousel -->
-                <script>
-                    $('.carousel').carousel({
-                        interval: 5000 //changes the speed
-                    })
-    </script>
-
-                <div class="ps-ms-main-ct">
-                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                    </asp:ContentPlaceHolder>
-                </div>
-
-
             </div>
+
+            <div class="ps-ms-main-ct">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+            <div class="ps-ms-main-ft-wrapper">
+                <div class="ps-ms-main-ft">
+                    Copyright © 2016 Rajamangala University of Technology Tawan-ok. All rights reserved
+                </div>
+            </div>
+
         </div>
     </form>
 </body>

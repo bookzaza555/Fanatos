@@ -10,7 +10,7 @@
 namespace TempleProject {
     
     
-    public partial class Register {
+    public partial class RegisterMonk {
         
         /// <summary>
         /// ScriptManager1 control.
@@ -29,6 +29,15 @@ namespace TempleProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl notification;
+        
+        /// <summary>
+        /// ddlRank_Monk control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlRank_Monk;
         
         /// <summary>
         /// tbUsername control.
@@ -74,33 +83,6 @@ namespace TempleProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbLastname;
-        
-        /// <summary>
-        /// tbEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbEmail;
-        
-        /// <summary>
-        /// tbBirthdate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbBirthdate;
-        
-        /// <summary>
-        /// tbAddress control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbAddress;
         
         /// <summary>
         /// tbPhone control.

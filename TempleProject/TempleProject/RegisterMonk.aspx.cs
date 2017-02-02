@@ -10,29 +10,24 @@ using System.Text.RegularExpressions;
 
 namespace TempleProject
 {
-    public partial class Register : System.Web.UI.Page
+    public partial class RegisterMonk : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                BindDDL();
+            }
+          
+        }
 
+        protected void BindDDL()
+        {
+            DatabaseManager.BindDropDown(ddlRank_Monk, "SELECT * FROM rank_user where id_rank IN(1,2,3)", "rank_name","id_rank","--กรุณาเลือก--");
         }
 
         protected void btnOK_Click(object sender, EventArgs e)
         {
-            if (tbEmail.Text != "")
-            {
-                string pattern = null;
-                pattern = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
-
-                if (Regex.IsMatch(tbEmail.Text, pattern))
-                {
-                }
-                else
-                {
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertmessage", "alert('email ไม่ถูกต้อง')", true);
-                    return;
-                }
-            }
 
             if (tbUsername.Text != "")
             {
@@ -56,17 +51,15 @@ namespace TempleProject
             using (MySqlConnection con = new MySqlConnection(DatabaseManager.CONNECTION_STRING))
             {
                 con.Open();
-                using (MySqlCommand com = new MySqlCommand("INSERT INTO PROFILE (name,lastname,birthdate,email,username,password,address,phone) VALUES (@name,@lastname,@birthdate,@email,@username,@password,@address,@phone)", con))
+                using (MySqlCommand com = new MySqlCommand("INSERT INTO PROFILE (id_rank,username,password,name,lastname,phone) VALUES (@id_rank,@username,@password,@name,@lastname,@phone)", con))
                 {
-                    com.Parameters.Add(new MySqlParameter("name", tbName.Text));
-                    com.Parameters.Add(new MySqlParameter("lastname", tbLastname.Text));
-                    DateTime date = DateTime.ParseExact(tbBirthdate.Text, "dd/MM/yyyy", null);
-                    com.Parameters.Add(new MySqlParameter("birthdate", date));
-                    com.Parameters.Add(new MySqlParameter("email", tbEmail.Text));
+                    com.Parameters.Add(new MySqlParameter("id_rank", ddlRank_Monk.SelectedValue));
                     com.Parameters.Add(new MySqlParameter("username", tbUsername.Text));
                     com.Parameters.Add(new MySqlParameter("password", tbPassword.Text));
-                    com.Parameters.Add(new MySqlParameter("address", tbAddress.Text));
+                    com.Parameters.Add(new MySqlParameter("name", tbName.Text));
+                    com.Parameters.Add(new MySqlParameter("lastname", tbLastname.Text));        
                     com.Parameters.Add(new MySqlParameter("phone", tbPhone.Text));
+                    
                     id = com.ExecuteNonQuery();
                 }
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertmessage", "alert('สมัครสำเร็จ')", true);
@@ -75,9 +68,6 @@ namespace TempleProject
                 tbPassword2.Text = "";
                 tbName.Text = "";
                 tbLastname.Text = "";
-                tbEmail.Text = "";
-                tbBirthdate.Text = "";
-                tbAddress.Text = "";
                 tbPhone.Text = "";
             }
 
