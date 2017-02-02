@@ -165,11 +165,11 @@
                                 <li>
                                     <a href="contact.aspx">ติดต่อ</a>
                                 </li>
-                                <li>
-                                    <a href="1234.aspx">เพิ่มเอา</a>
-                                </li>
                                  <li>
                                     <a href="register.aspx">สมัครสมาชิก</a>
+                                </li>
+                                <li>
+                                    <a href="1234.aspx">เพิ่มเอา</a>
                                 </li>
                             </ul>
                         </div>
